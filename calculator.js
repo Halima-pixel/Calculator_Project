@@ -39,3 +39,31 @@ const divide = (a, b) => {
 let operand1 = 0;
 let operand2 = 0;
 let operator = "";
+
+// Create a function that takes and operator and two numbers and calls one of the above functions on the numbers
+const operate = (operand1, operator, operand2) => {
+    switch (operator) {
+        case "+": 
+            return add(operand1, operand2);
+            break;
+ 
+        case "-":
+            return subtract(operand1, operand2);
+            break;
+        
+        case "*":
+            return multiply(operand1, operand2);
+            break;
+       
+        case "/":
+            return divide(operand1, operand2);
+            break;
+
+        default:
+            throw new Error("Enter a Valid Operator");
+
+    }
+
+}
+
+   
