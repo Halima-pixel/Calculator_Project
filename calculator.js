@@ -61,9 +61,31 @@ const operate = (operand1, operator, operand2) => {
 
         default:
             throw new Error("Enter a Valid Operator");
-
-    }
-
+     }
 }
+
+const buttons = document.querySelectorAll(".btn");
+const display = document.querySelector(".display");
+
+
+buttons.forEach( (btn) => {
+    btn.addEventListener("click", (e) => {
+       btnText = (e.target.innerText)
+
+       // Update the Display
+
+       if (!isNaN(btnText)) {
+        display.textContent += btnText;
+       } else {
+        operator = btnText;
+        operand1 = parseFloat(display.textContent);
+        display.textContent = "";
+       }
+    })
+})
+
+   
+
+
 
    
